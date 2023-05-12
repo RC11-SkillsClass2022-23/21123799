@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://dbi0aku0b2mcr"]
+
+[ext_resource type="Script" path="res://node_3d.gd" id="1_76lb8"]
+[ext_resource type="Script" path="res://Camera3D.gd" id="1_w0ape"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hngjm"]
+
+[sub_resource type="Sky" id="Sky_bhqoj"]
+sky_material = SubResource("ProceduralSkyMaterial_hngjm")
+
+[sub_resource type="Environment" id="Environment_xgwf3"]
+background_mode = 2
+sky = SubResource("Sky_bhqoj")
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_76lb8")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+script = ExtResource("1_w0ape")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xgwf3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
